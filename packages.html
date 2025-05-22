@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление пакетами | LinuxGuide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="packages.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Linux<span>Guide</span></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="distros.html">Дистрибутивы</a></li>
+                    <li><a href="commands.html">Команды</a></li>
+                    <li><a href="packages.html" class="active">Пакеты</a></li>
+                    <li><a href="filesystem.html">Файловая система</a></li>
+                    <li><a href="tips.html">Советы</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="packages-page">
+        <section class="page-header">
+            <div class="container">
+                <h1>Управление пакетами в Linux</h1>
+                <p>Изучите различные системы управления пакетами в дистрибутивах Linux</p>
+            </div>
+        </section>
+
+        <section class="package-managers">
+            <div class="container">
+                <div class="manager-tabs">
+                    <button class="tab-btn active" data-tab="apt">APT</button>
+                    <button class="tab-btn" data-tab="yum">YUM/DNF</button>
+                    <button class="tab-btn" data-tab="pacman">Pacman</button>
+                    <button class="tab-btn" data-tab="zypper">Zypper</button>
+                </div>
+
+                <div class="tab-content active" id="apt">
+                    <div class="manager-info">
+                        <div class="manager-header">
+                            <img src="images/debian-logo.png" alt="APT">
+                            <h2>APT (Advanced Package Tool)</h2>
+                        </div>
+                        <div class="manager-body">
+                            <p>Используется в дистрибутивах на основе Debian (Ubuntu, Linux Mint, Debian и др.).</p>
+                            
+                            <h3>Основные команды:</h3>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command">sudo apt update</div>
+                                    <div class="description">Обновить список доступных пакетов</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo apt upgrade</div>
+                                    <div class="description">Обновить все установленные пакеты</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo apt install &lt;пакет&gt;</div>
+                                    <div class="description">Установить пакет</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo apt remove &lt;пакет&gt;</div>
+                                    <div class="description">Удалить пакет</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo apt search &lt;запрос&gt;</div>
+                                    <div class="description">Поиск пакета</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo apt autoremove</div>
+                                    <div class="description">Удалить ненужные зависимости</div>
+                                </div>
+                            </div>
+                            
+                            <h3>Дополнительные возможности:</h3>
+                            <ul class="features-list">
+                                <li>Поддержка PPA (Personal Package Archives) для установки дополнительного ПО</li>
+                                <li>Возможность отката обновлений</li>
+                                <li>Широкий выбор пакетов в официальных репозиториях</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="yum">
+                    <div class="manager-info">
+                        <div class="manager-header">
+                            <img src="images/redhat-logo.png" alt="YUM">
+                            <h2>YUM/DNF (Yellowdog Updater Modified/Dandified YUM)</h2>
+                        </div>
+                        <div class="manager-body">
+                            <p>Используется в дистрибутивах на основе Red Hat (Fedora, CentOS, RHEL). DNF - новая версия YUM.</p>
+                            
+                            <h3>Основные команды:</h3>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command">sudo yum update</div>
+                                    <div class="description">Обновить все пакеты</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo yum install &lt;пакет&gt;</div>
+                                    <div class="description">Установить пакет</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo yum remove &lt;пакет&gt;</div>
+                                    <div class="description">Удалить пакет</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo yum search &lt;запрос&gt;</div>
+                                    <div class="description">Поиск пакета</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo yum info &lt;пакет&gt;</div>
+                                    <div class="description">Информация о пакете</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo yum clean all</div>
+                                    <div class="description">Очистить кеш</div>
+                                </div>
+                            </div>
+                            
+                            <h3>Особенности:</h3>
+                            <ul class="features-list">
+                                <li>Автоматическое разрешение зависимостей</li>
+                                <li>Поддержка групп пакетов</li>
+                                <li>Плагины для расширения функциональности</li>
+                                <li>DNF работает быстрее и эффективнее YUM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="pacman">
+                    <div class="manager-info">
+                        <div class="manager-header">
+                            <img src="images/arch-logo.png" alt="Pacman">
+                            <h2>Pacman</h2>
+                        </div>
+                        <div class="manager-body">
+                            <p>Менеджер пакетов для Arch Linux и производных дистрибутивов (Manjaro, EndeavourOS и др.).</p>
+                            
+                            <h3>Основные команды:</h3>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command">sudo pacman -Syu</div>
+                                    <div class="description">Обновить систему и пакеты</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo pacman -S &lt;пакет&gt;</div>
+                                    <div class="description">Установить пакет</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo pacman -R &lt;пакет&gt;</div>
+                                    <div class="description">Удалить пакет</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo pacman -Ss &lt;запрос&gt;</div>
+                                    <div class="description">Поиск пакета</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo pacman -Qi &lt;пакет&gt;</div>
+                                    <div class="description">Информация об установленном пакете</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo pacman -Sc</div>
+                                    <div class="description">Очистить кеш</div>
+                                </div>
+                            </div>
+                            
+                            <h3>Особенности:</h3>
+                            <ul class="features-list">
+                                <li>Простота и скорость работы</li>
+                                <li>Доступ к AUR (Arch User Repository) с тысячами пакетов</li>
+                                <li>Минималистичный дизайн</li>
+                                <li>Rolling release модель обновлений</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="zypper">
+                    <div class="manager-info">
+                        <div class="manager-header">
+                            <img src="images/opensuse-logo.png" alt="Zypper">
+                            <h2>Zypper</h2>
+                        </div>
+                        <div class="manager-body">
+                            <p>Менеджер пакетов для openSUSE и SUSE Linux Enterprise.</p>
+                            
+                            <h3>Основные команды:</h3>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <div class="command">sudo zypper refresh</div>
+                                    <div class="description">Обновить список пакетов</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo zypper update</div>
+                                    <div class="description">Обновить все пакеты</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo zypper install &lt;пакет&gt;</div>
+                                    <div class="description">Установить пакет</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo zypper remove &lt;пакет&gt;</div>
+                                    <div class="description">Удалить пакет</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo zypper search &lt;запрос&gt;</div>
+                                    <div class="description">Поиск пакета</div>
+                                </div>
+                                <div class="command-item">
+                                    <div class="command">sudo zypper info &lt;пакет&gt;</div>
+                                    <div class="description">Информация о пакете</div>
+                                </div>
+                            </div>
+                            
+                            <h3>Особенности:</h3>
+                            <ul class="features-list">
+                                <li>Поддержка патчей и обновлений безопасности</li>
+                                <li>Возможность отката изменений</li>
+                                <li>Интеграция с YaST (система настройки openSUSE)</li>
+                                <li>Поддержка нескольких репозиториев</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="package-tips">
+            <div class="container">
+                <h2>Полезные советы по работе с пакетами</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3>Добавление репозиториев</h3>
+                        <p>Многие дистрибутивы позволяют добавлять сторонние репозитории для доступа к дополнительному ПО. Например, в Ubuntu можно добавить PPA:</p>
+                        <div class="code-block">
+                            <code>sudo add-apt-repository ppa:репозиторий/название<br>sudo apt update</code>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3>Поиск зависимостей</h3>
+                        <p>Если пакет не устанавливается из-за зависимостей, можно попробовать:</p>
+                        <div class="code-block">
+                            <code>sudo apt --fix-broken install  # Для APT<br>sudo yum deplist &lt;пакет&gt;  # Для YUM</code>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3>Установка из исходников</h3>
+                        <p>Если пакета нет в репозиториях, можно установить его из исходного кода:</p>
+                        <div class="code-block">
+                            <code>./configure<br>make<br>sudo make install</code>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3>Сохранение списка пакетов</h3>
+                        <p>Перед переустановкой системы сохраните список установленных пакетов:</p>
+                        <div class="code-block">
+                            <code># Для APT<br>dpkg --get-selections > packages.list<br><br># Для восстановления<br>sudo dpkg --set-selections &lt; packages.list<br>sudo apt-get dselect-upgrade</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+    </footer>
+    <script src="packages.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

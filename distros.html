@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дистрибутивы Linux | LinuxGuide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="distros.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Linux<span>Guide</span></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="distros.html" class="active">Дистрибутивы</a></li>
+                    <li><a href="commands.html">Команды</a></li>
+                    <li><a href="packages.html">Пакеты</a></li>
+                    <li><a href="filesystem.html">Файловая система</a></li>
+                    <li><a href="tips.html">Советы</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="distros-page">
+        <section class="page-header">
+            <div class="container">
+                <h1>Дистрибутивы Linux</h1>
+                <p>Выберите подходящий дистрибутив для ваших задач</p>
+            </div>
+        </section>
+
+        <section class="distro-types">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="beginner">Для начинающих</button>
+                    <button class="filter-btn" data-filter="advanced">Для продвинутых</button>
+                    <button class="filter-btn" data-filter="server">Серверные</button>
+                    <button class="filter-btn" data-filter="special">Специализированные</button>
+                </div>
+
+                <div class="distro-grid">
+                    <!-- Ubuntu -->
+                    <div class="distro-card" data-category="beginner">
+                        <div class="distro-header">
+                            <img src="images/ubuntu-logo.png" alt="Ubuntu">
+                            <h3>Ubuntu</h3>
+                        </div>
+                        <div class="distro-body">
+                            <p class="distro-desc">Один из самых популярных дистрибутивов для начинающих с отличной поддержкой и сообществом.</p>
+                            <div class="distro-info">
+                                <span class="info-item"><i class="fas fa-code-branch"></i> Debian-based</span>
+                                <span class="info-item"><i class="fas fa-desktop"></i> GNOME</span>
+                                <span class="info-item"><i class="fas fa-calendar-alt"></i> 6 месяцев (LTS 2 года)</span>
+                            </div>
+                            <ul class="distro-features">
+                                <li>Простота установки и использования</li>
+                                <li>Большое сообщество</li>
+                                <li>Широкая поддержка оборудования</li>
+                                <li>Много готового ПО</li>
+                            </ul>
+                        </div>
+                        <div class="distro-footer">
+                            <a href="https://ubuntu.com" target="_blank" class="btn">Сайт проекта</a>
+                            <a href="#" class="btn secondary">Сравнить</a>
+                        </div>
+                    </div>
+
+                    <!-- Fedora -->
+                    <div class="distro-card" data-category="beginner">
+                        <div class="distro-header">
+                            <img src="images/fedora-logo.png" alt="Fedora">
+                            <h3>Fedora</h3>
+                        </div>
+                        <div class="distro-body">
+                            <p class="distro-desc">Инновационный дистрибутив с последними технологиями, спонсируемый Red Hat.</p>
+                            <div class="distro-info">
+                                <span class="info-item"><i class="fas fa-code-branch"></i> Red Hat-based</span>
+                                <span class="info-item"><i class="fas fa-desktop"></i> GNOME</span>
+                                <span class="info-item"><i class="fas fa-calendar-alt"></i> 6-8 месяцев</span>
+                            </div>
+                            <ul class="distro-features">
+                                <li>Передовые технологии</li>
+                                <li>Хорошая документация</li>
+                                <li>Быстрые обновления</li>
+                                <li>Тестовая площадка для RHEL</li>
+                            </ul>
+                        </div>
+                        <div class="distro-footer">
+                            <a href="https://fedoraproject.org" target="_blank" class="btn">Сайт проекта</a>
+                            <a href="#" class="btn secondary">Сравнить</a>
+                        </div>
+                    </div>
+
+                    <!-- Arch Linux -->
+                    <div class="distro-card" data-category="advanced">
+                        <div class="distro-header">
+                            <img src="images/arch-logo.png" alt="Arch Linux">
+                            <h3>Arch Linux</h3>
+                        </div>
+                        <div class="distro-body">
+                            <p class="distro-desc">Минималистичный дистрибутив для опытных пользователей с rolling release моделью.</p>
+                            <div class="distro-info">
+                                <span class="info-item"><i class="fas fa-code-branch"></i> Independent</span>
+                                <span class="info-item"><i class="fas fa-desktop"></i> Minimal</span>
+                                <span class="info-item"><i class="fas fa-calendar-alt"></i> Rolling release</span>
+                            </div>
+                            <ul class="distro-features">
+                                <li>Максимальная кастомизация</li>
+                                <li>Огромный репозиторий (AUR)</li>
+                                <li>Отличная документация (Wiki)</li>
+                                <li>Минималистичный подход</li>
+                            </ul>
+                        </div>
+                        <div class="distro-footer">
+                            <a href="https://archlinux.org" target="_blank" class="btn">Сайт проекта</a>
+                            <a href="#" class="btn secondary">Сравнить</a>
+                        </div>
+                    </div>
+
+                    <!-- CentOS -->
+                    <div class="distro-card" data-category="server">
+                        <div class="distro-header">
+                            <img src="images/centos-logo.png" alt="CentOS">
+                            <h3>CentOS Stream</h3>
+                        </div>
+                        <div class="distro-body">
+                            <p class="distro-desc">Стабильный серверный дистрибутив, основанный на исходных кодах RHEL.</p>
+                            <div class="distro-info">
+                                <span class="info-item"><i class="fas fa-code-branch"></i> Red Hat-based</span>
+                                <span class="info-item"><i class="fas fa-server"></i> Server</span>
+                                <span class="info-item"><i class="fas fa-calendar-alt"></i> 5+ лет</span>
+                            </div>
+                            <ul class="distro-features">
+                                <li>Высокая стабильность</li>
+                                <li>Долгосрочная поддержка</li>
+                                <li>Идеален для серверов</li>
+                                <li>Полная совместимость с RHEL</li>
+                            </ul>
+                        </div>
+                        <div class="distro-footer">
+                            <a href="https://centos.org" target="_blank" class="btn">Сайт проекта</a>
+                            <a href="#" class="btn secondary">Сравнить</a>
+                        </div>
+                    </div>
+
+                    <!-- Kali Linux -->
+                    <div class="distro-card" data-category="special">
+                        <div class="distro-header">
+                            <img src="images/kali-logo.png" alt="Kali Linux">
+                            <h3>Kali Linux</h3>
+                        </div>
+                        <div class="distro-body">
+                            <p class="distro-desc">Специализированный дистрибутив для тестирования безопасности и пентеста.</p>
+                            <div class="distro-info">
+                                <span class="info-item"><i class="fas fa-code-branch"></i> Debian-based</span>
+                                <span class="info-item"><i class="fas fa-shield-alt"></i> Security</span>
+                                <span class="info-item"><i class="fas fa-calendar-alt"></i> Rolling release</span>
+                            </div>
+                            <ul class="distro-features">
+                                <li>600+ инструментов безопасности</li>
+                                <li>Поддержка беспроводных устройств</li>
+                                <li>Настройки по умолчанию для пентеста</li>
+                                <li>Регулярные обновления</li>
+                            </ul>
+                        </div>
+                        <div class="distro-footer">
+                            <a href="https://kali.org" target="_blank" class="btn">Сайт проекта</a>
+                            <a href="#" class="btn secondary">Сравнить</a>
+                        </div>
+                    </div>
+
+                    <!-- Linux Mint -->
+                    <div class="distro-card" data-category="beginner">
+                        <div class="distro-header">
+                            <img src="images/mint-logo.png" alt="Linux Mint">
+                            <h3>Linux Mint</h3>
+                        </div>
+                        <div class="distro-body">
+                            <p class="distro-desc">Удобный дистрибутив для новичков с интерфейсом, похожим на Windows.</p>
+                            <div class="distro-info">
+                                <span class="info-item"><i class="fas fa-code-branch"></i> Ubuntu-based</span>
+                                <span class="info-item"><i class="fas fa-desktop"></i> Cinnamon</span>
+                                <span class="info-item"><i class="fas fa-calendar-alt"></i> 6 месяцев</span>
+                            </div>
+                            <ul class="distro-features">
+                                <li>Простота для Windows-мигрантов</li>
+                                <li>Встроенные кодеки и драйверы</li>
+                                <li>Стабильность и надежность</li>
+                                <li>Собственные утилиты управления</li>
+                            </ul>
+                        </div>
+                        <div class="distro-footer">
+                            <a href="https://linuxmint.com" target="_blank" class="btn">Сайт проекта</a>
+                            <a href="#" class="btn secondary">Сравнить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="distro-comparison">
+            <div class="container">
+                <h2>Сравнение дистрибутивов</h2>
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Дистрибутив</th>
+                                <th>Основа</th>
+                                <th>Целевая аудитория</th>
+                                <th>Цикл обновлений</th>
+                                <th>Сложность</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ubuntu</td>
+                                <td>Debian</td>
+                                <td>Новички, разработчики</td>
+                                <td>6 мес (LTS 2 года)</td>
+                                <td><span class="difficulty easy">Низкая</span></td>
+                            </tr>
+                            <tr>
+                                <td>Fedora</td>
+                                <td>Red Hat</td>
+                                <td>Разработчики, энтузиасты</td>
+                                <td>6-8 месяцев</td>
+                                <td><span class="difficulty medium">Средняя</span></td>
+                            </tr>
+                            <tr>
+                                <td>Arch Linux</td>
+                                <td>Independent</td>
+                                <td>Опытные пользователи</td>
+                                <td>Rolling release</td>
+                                <td><span class="difficulty hard">Высокая</span></td>
+                            </tr>
+                            <tr>
+                                <td>CentOS</td>
+                                <td>RHEL</td>
+                                <td>Серверы, предприятия</td>
+                                <td>5+ лет</td>
+                                <td><span class="difficulty medium">Средняя</span></td>
+                            </tr>
+                            <tr>
+                                <td>Kali Linux</td>
+                                <td>Debian</td>
+                                <td>Специалисты по безопасности</td>
+                                <td>Rolling release</td>
+                                <td><span class="difficulty medium">Средняя</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+    </footer>
+    <script src="distros.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

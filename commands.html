@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команды Linux | LinuxGuide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="commands.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Linux<span>Guide</span></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="distros.html">Дистрибутивы</a></li>
+                    <li><a href="commands.html" class="active">Команды</a></li>
+                    <li><a href="packages.html">Пакеты</a></li>
+                    <li><a href="filesystem.html">Файловая система</a></li>
+                    <li><a href="tips.html">Советы</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="commands-page">
+        <section class="page-header">
+            <div class="container">
+                <h1>Основные команды Linux</h1>
+                <p>Изучите базовые команды для работы в терминале</p>
+            </div>
+        </section>
+
+        <section class="command-categories">
+            <div class="container">
+                <div class="category">
+                    <h2><i class="fas fa-folder-open"></i> Работа с файлами</h2>
+                    <div class="command-table">
+                        <div class="command-row header">
+                            <div class="command-name">Команда</div>
+                            <div class="command-desc">Описание</div>
+                            <div class="command-example">Пример</div>
+                        </div>
+                        
+                        <div class="command-row">
+                            <div class="command-name">ls</div>
+                            <div class="command-desc">Показать содержимое директории</div>
+                            <div class="command-example"><code>ls -la</code></div>
+                        </div>
+                        
+                        <div class="command-row">
+                            <div class="command-name">cd</div>
+                            <div class="command-desc">Перейти в директорию</div>
+                            <div class="command-example"><code>cd /home/user</code></div>
+                        </div>
+                        
+                        <div class="command-row">
+                            <div class="command-name">cp</div>
+                            <div class="command-desc">Копировать файлы/директории</div>
+                            <div class="command-example"><code>cp file.txt backup/</code></div>
+                        </div>
+                        
+                        <div class="command-row">
+                            <div class="command-name">mv</div>
+                            <div class="command-desc">Переместить или переименовать файл</div>
+                            <div class="command-example"><code>mv old.txt new.txt</code></div>
+                        </div>
+                        
+                        <div class="command-row">
+                            <div class="command-name">rm</div>
+                            <div class="command-desc">Удалить файл/директорию</div>
+                            <div class="command-example"><code>rm -r folder/</code></div>
+                        </div>
+                        
+                        <div class="command-row">
+                            <div class="command-name">mkdir</div>
+                            <div class="command-desc">Создать директорию</div>
+                            <div class="command-example"><code>mkdir new_folder</code></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h2><i class="fas fa-tools"></i> Системные команды</h2>
+                    <div class="command-table">
+                        <div class="command-row header">
+                            <div class="command-name">Команда</div>
+                            <div class="command-desc">Описание</div>
+                            <div class="command-example">Пример</div>
+                        </div>
+                        
+                        <div class="command-row">
+                            <div class="command-name">sudo</div>
+                            <div class="command-desc">Выполнить команду с правами root</div>
+                            <div class="command-example"><code>sudo apt update</code></div>
+                        </div>
+                        
+                        <div class="command-row">
+                            <div class="command-name">top</div>
+                            <div class="command-desc">Показать запущенные процессы</div>
+                            <div class="command-example"><code>top</code></div>
+                        </div>
+                        
+                        <div class="command-row">
+                            <div class="command-name">ps</div>
+                            <div class="command-desc">Показать текущие процессы</div>
+                            <div class="command-example"><code>ps aux</code></div>
+                        </div>
+                        
+                        <div class="command-row">
+                            <div class="command-name">kill</div>
+                            <div class="command-desc">Завершить процесс</div>
+                            <div class="command-example"><code>kill -9 1234</code></div>
+                        </div>
+                        
+                        <div class="command-row">
+                            <div class="command-name">df</div>
+                            <div class="command-desc">Показать свободное место на дисках</div>
+                            <div class="command-example"><code>df -h</code></div>
+                        </div>
+                        
+                        <div class="command-row">
+                            <div class="command-name">free</div>
+                            <div class="command-desc">Показать использование памяти</div>
+                            <div class="command-example"><code>free -m</code></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="terminal-demo">
+                    <h2>Попробуйте в интерактивном терминале</h2>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="red"></span>
+                                <span class="yellow"></span>
+                                <span class="green"></span>
+                            </div>
+                            <div class="terminal-title">user@linuxguide:~$</div>
+                        </div>
+                        <div class="terminal-body" id="terminal-output">
+                            <p>Добро пожаловать в терминал Linux! Введите команду:</p>
+                        </div>
+                        <div class="terminal-input">
+                            <span class="prompt">$</span>
+                            <input type="text" id="command-input" placeholder="Введите команду...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+    </footer>
+
+    <script src="commands.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

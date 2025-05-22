@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Файловая система Linux | LinuxGuide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="filesystem.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Linux<span>Guide</span></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="distros.html">Дистрибутивы</a></li>
+                    <li><a href="commands.html">Команды</a></li>
+                    <li><a href="packages.html">Пакеты</a></li>
+                    <li><a href="filesystem.html" class="active">Файловая система</a></li>
+                    <li><a href="tips.html">Советы</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="filesystem-page">
+        <section class="page-header">
+            <div class="container">
+                <h1>Файловая система Linux</h1>
+                <p>Изучите структуру и организацию файлов в Linux</p>
+            </div>
+        </section>
+
+        <section class="fs-structure">
+            <div class="container">
+                <h2>Иерархия файловой системы</h2>
+                <p>В Linux все файлы и каталоги организованы в единую древовидную структуру, начинающуюся с корневого каталога <code>/</code>.</p>
+                
+                <div class="fs-tree">
+                    <div class="fs-root">
+                        <span class="fs-folder"><i class="fas fa-folder"></i> / (корень)</span>
+                        <div class="fs-children">
+                            <div class="fs-item">
+                                <span class="fs-folder"><i class="fas fa-folder"></i> bin</span>
+                                <div class="fs-tooltip">Основные исполняемые файлы</div>
+                            </div>
+                            <div class="fs-item">
+                                <span class="fs-folder"><i class="fas fa-folder"></i> etc</span>
+                                <div class="fs-tooltip">Конфигурационные файлы системы</div>
+                            </div>
+                            <div class="fs-item">
+                                <span class="fs-folder"><i class="fas fa-folder"></i> home</span>
+                                <div class="fs-tooltip">Домашние каталоги пользователей</div>
+                            </div>
+                            <div class="fs-item">
+                                <span class="fs-folder"><i class="fas fa-folder"></i> usr</span>
+                                <div class="fs-tooltip">Пользовательские программы и данные</div>
+                            </div>
+                            <div class="fs-item">
+                                <span class="fs-folder"><i class="fas fa-folder"></i> var</span>
+                                <div class="fs-tooltip">Изменяемые файлы (логи, кеши)</div>
+                            </div>
+                            <div class="fs-item">
+                                <span class="fs-folder"><i class="fas fa-folder"></i> tmp</span>
+                                <div class="fs-tooltip">Временные файлы</div>
+                            </div>
+                            <div class="fs-item">
+                                <span class="fs-folder"><i class="fas fa-folder"></i> dev</span>
+                                <div class="fs-tooltip">Файлы устройств</div>
+                            </div>
+                            <div class="fs-item">
+                                <span class="fs-folder"><i class="fas fa-folder"></i> proc</span>
+                                <div class="fs-tooltip">Информация о процессах</div>
+                            </div>
+                            <div class="fs-item">
+                                <span class="fs-folder"><i class="fas fa-folder"></i> lib</span>
+                                <div class="fs-tooltip">Системные библиотеки</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fs-directories">
+                    <h3>Основные каталоги и их назначение</h3>
+                    <div class="directory-grid">
+                        <div class="directory-card">
+                            <div class="dir-name"><code>/bin</code></div>
+                            <div class="dir-desc">Содержит основные исполняемые файлы (команды), доступные всем пользователям</div>
+                        </div>
+                        <div class="directory-card">
+                            <div class="dir-name"><code>/etc</code></div>
+                            <div class="dir-desc">Конфигурационные файлы системы и установленных программ</div>
+                        </div>
+                        <div class="directory-card">
+                            <div class="dir-name"><code>/home</code></div>
+                            <div class="dir-desc">Содержит домашние каталоги пользователей с их персональными файлами</div>
+                        </div>
+                        <div class="directory-card">
+                            <div class="dir-name"><code>/usr</code></div>
+                            <div class="dir-desc">Вторичная иерархия для пользовательских данных (программы, библиотеки)</div>
+                        </div>
+                        <div class="directory-card">
+                            <div class="dir-name"><code>/var</code></div>
+                            <div class="dir-desc">Переменные данные (логи, кеши, базы данных, почта)</div>
+                        </div>
+                        <div class="directory-card">
+                            <div class="dir-name"><code>/tmp</code></div>
+                            <div class="dir-desc">Временные файлы, которые могут быть удалены при перезагрузке</div>
+                        </div>
+                        <div class="directory-card">
+                            <div class="dir-name"><code>/dev</code></div>
+                            <div class="dir-desc">Файлы устройств (жесткие диски, принтеры, USB и т.д.)</div>
+                        </div>
+                        <div class="directory-card">
+                            <div class="dir-name"><code>/proc</code></div>
+                            <div class="dir-desc">Виртуальная файловая система с информацией о процессах и ядре</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fs-permissions">
+            <div class="container">
+                <h2>Права доступа к файлам</h2>
+                <p>В Linux каждому файлу и каталогу назначены права доступа для владельца, группы и всех остальных пользователей.</p>
+                
+                <div class="permission-visual">
+                    <div class="perm-example">
+                        <code>-rwxr-xr--</code>
+                        <div class="perm-breakdown">
+                            <div class="perm-part">
+                                <span class="perm-type">Тип:</span>
+                                <span class="perm-value">- (обычный файл)</span>
+                            </div>
+                            <div class="perm-part">
+                                <span class="perm-type">Владелец:</span>
+                                <span class="perm-value">rwx (чтение, запись, выполнение)</span>
+                            </div>
+                            <div class="perm-part">
+                                <span class="perm-type">Группа:</span>
+                                <span class="perm-value">r-x (чтение, выполнение)</span>
+                            </div>
+                            <div class="perm-part">
+                                <span class="perm-type">Остальные:</span>
+                                <span class="perm-value">r-- (только чтение)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="permission-commands">
+                    <h3>Команды для работы с правами</h3>
+                    <div class="command-grid">
+                        <div class="command-card">
+                            <div class="command-name"><code>chmod</code></div>
+                            <div class="command-desc">Изменение прав доступа к файлу/каталогу</div>
+                            <div class="command-examples">
+                                <p><code>chmod 755 file</code> - установить права rwxr-xr-x</p>
+                                <p><code>chmod +x script.sh</code> - добавить право на выполнение</p>
+                            </div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-name"><code>chown</code></div>
+                            <div class="command-desc">Изменение владельца файла/каталога</div>
+                            <div class="command-examples">
+                                <p><code>chown user file</code> - изменить владельца</p>
+                                <p><code>chown user:group file</code> - изменить владельца и группу</p>
+                            </div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-name"><code>umask</code></div>
+                            <div class="command-desc">Установка маски прав по умолчанию</div>
+                            <div class="command-examples">
+                                <p><code>umask 022</code> - новые файлы будут с правами 755</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fs-links">
+            <div class="container">
+                <h2>Ссылки в Linux</h2>
+                <p>В Linux существуют два типа ссылок, которые позволяют обращаться к файлам по разным именам.</p>
+                
+                <div class="links-comparison">
+                    <div class="link-type">
+                        <h3>Жесткие ссылки (hard links)</h3>
+                        <ul>
+                            <li>Создаются командой <code>ln исходный_файл ссылка</code></li>
+                            <li>Ссылаются непосредственно на данные на диске</li>
+                            <li>Не могут ссылаться на каталоги</li>
+                            <li>Не могут ссылаться на файлы в других файловых системах</li>
+                            <li>При удалении оригинала данные остаются доступны через ссылку</li>
+                        </ul>
+                    </div>
+                    <div class="link-type">
+                        <h3>Символические ссылки (soft/symbolic links)</h3>
+                        <ul>
+                            <li>Создаются командой <code>ln -s исходный_файл ссылка</code></li>
+                            <li>Содержат только путь к оригинальному файлу</li>
+                            <li>Могут ссылаться на каталоги</li>
+                            <li>Могут ссылаться на файлы в других файловых системах</li>
+                            <li>При удалении оригинала ссылка становится нерабочей</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="link-visual">
+                    <div class="link-diagram">
+                        <div class="hard-link">
+                            <div class="file">Файл A</div>
+                            <div class="inode">Inode 1234</div>
+                            <div class="file">Файл B (hard link)</div>
+                        </div>
+                        <div class="symbolic-link">
+                            <div class="file">Файл C</div>
+                            <div class="link">→ Указывает на Файл C</div>
+                            <div class="file">Файл D (symlink)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <footer class="footer">
+    </footer>
+
+    <script src="filesystem.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

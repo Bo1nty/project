@@ -1,0 +1,283 @@
+/* Стили для страницы файловой системы */
+.filesystem-page .page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.filesystem-page .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Дерево файловой системы */
+.fs-tree {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fs-root {
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.fs-folder {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.fs-folder:hover {
+    background: #f0f0f0;
+}
+
+.fs-folder i {
+    color: var(--primary-color);
+}
+
+.fs-children {
+    margin-left: 2rem;
+    padding-left: 1rem;
+    border-left: 2px dashed #ddd;
+}
+
+.fs-item {
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+.fs-tooltip {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: 1rem;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    width: 200px;
+    z-index: 10;
+}
+
+.fs-item:hover .fs-tooltip {
+    display: block;
+}
+
+/* Сетка каталогов */
+.directory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.directory-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.directory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dir-name {
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.dir-desc {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Права доступа */
+.fs-permissions {
+    padding: 3rem 0;
+    background: #f9f9f9;
+}
+
+.perm-example {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    font-family: monospace;
+    font-size: 1.2rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.perm-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.perm-part {
+    background: #f0f0f0;
+    padding: 0.8rem;
+    border-radius: 4px;
+}
+
+.perm-type {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+
+.perm-value {
+    font-family: monospace;
+}
+
+/* Команды для прав */
+.command-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.command-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.command-name {
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.command-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.command-examples {
+    background: #f8f8f8;
+    padding: 0.8rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+
+.command-examples p {
+    margin: 0.5rem 0;
+}
+
+/* Ссылки */
+.links-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.link-type {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.link-type h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.link-type ul {
+    list-style: none;
+    padding: 0;
+}
+
+.link-type li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.9rem;
+}
+
+.link-type li:last-child {
+    border-bottom: none;
+}
+
+.link-type li::before {
+    content: "•";
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.link-diagram {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.hard-link, .symbolic-link {
+    text-align: center;
+    font-family: monospace;
+}
+
+.file {
+    background: #f0f0f0;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    display: inline-block;
+}
+
+.inode {
+    color: #666;
+    font-size: 0.8rem;
+    margin: 0.3rem 0;
+}
+
+.link {
+    color: var(--primary-color);
+    margin: 0.3rem 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .fs-children {
+        margin-left: 1rem;
+    }
+    
+    .fs-tooltip {
+        position: static;
+        margin: 0.5rem 0 0 0;
+        width: auto;
+        display: block;
+    }
+    
+    .fs-item:hover .fs-tooltip {
+        display: block;
+    }
+}

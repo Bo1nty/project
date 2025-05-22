@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Советы для новичков | LinuxGuide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tips.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Linux<span>Guide</span></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="distros.html">Дистрибутивы</a></li>
+                    <li><a href="commands.html">Команды</a></li>
+                    <li><a href="packages.html">Пакеты</a></li>
+                    <li><a href="filesystem.html">Файловая система</a></li>
+                    <li><a href="tips.html" class="active">Советы</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="tips-page">
+        <section class="page-header">
+            <div class="container">
+                <h1>Советы для новичков</h1>
+                <p>Полезные рекомендации для тех, кто только начинает работать с Linux</p>
+            </div>
+        </section>
+
+        <section class="getting-started">
+            <div class="container">
+                <h2>Начало работы</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Выбор дистрибутива</h3>
+                        <p>Начните с дистрибутивов, дружелюбных к новичкам: Ubuntu, Linux Mint или Fedora. Они имеют хорошую документацию и большое сообщество.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon"><i class="fas fa-terminal"></i></div>
+                        <h3>Освойте терминал</h3>
+                        <p>Не бойтесь командной строки - это мощный инструмент. Начните с базовых команд (ls, cd, cp, mv) и постепенно расширяйте знания.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon"><i class="fas fa-user-friends"></i></div>
+                        <h3>Присоединитесь к сообществу</h3>
+                        <p>Linux имеет активное сообщество. Ищите помощь на форумах, в чатах и Q&A сайтах, таких как Stack Overflow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="common-tasks">
+            <div class="container">
+                <h2>Решения частых проблем</h2>
+                <div class="task-accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Как установить программу без графического интерфейса?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Используйте менеджер пакетов вашего дистрибутива:</p>
+                            <ul>
+                                <li><strong>Ubuntu/Debian:</strong> <code>sudo apt install имя_пакета</code></li>
+                                <li><strong>Fedora:</strong> <code>sudo dnf install имя_пакета</code></li>
+                                <li><strong>Arch Linux:</strong> <code>sudo pacman -S имя_пакета</code></li>
+                            </ul>
+                            <p>Если пакета нет в репозиториях, можно скачать .deb/.rpm файл или собрать из исходников.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Как решить проблему с зависимостями пакетов?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Попробуйте следующие команды:</p>
+                            <ul>
+                                <li><code>sudo apt --fix-broken install</code> (для Debian/Ubuntu)</li>
+                                <li><code>sudo dnf autoremove</code> (для Fedora)</li>
+                                <li><code>sudo pacman -Syu</code> (для Arch)</li>
+                            </ul>
+                            <p>Если проблема сохраняется, поищите решение для конкретного пакета или ошибки.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Как добавить пользователя в группу?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Используйте команду:</p>
+                            <p><code>sudo usermod -aG группа имя_пользователя</code></p>
+                            <p>После этого пользователю нужно выйти и зайти снова, чтобы изменения вступили в силу.</p>
+                            <p>Проверить группы пользователя можно командой <code>groups имя_пользователя</code>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Как изменить права доступа к файлу?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Используйте команду <code>chmod</code>:</p>
+                            <ul>
+                                <li><code>chmod 755 файл</code> - владелец: чтение+запись+выполнение, остальные: чтение+выполнение</li>
+                                <li><code>chmod +x файл</code> - добавить право на выполнение</li>
+                                <li><code>chmod -R 755 папка</code> - рекурсивно изменить права для папки и содержимого</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="security-tips">
+            <div class="container">
+                <h2>Безопасность</h2>
+                <div class="security-grid">
+                    <div class="security-card">
+                        <div class="security-icon"><i class="fas fa-user-shield"></i></div>
+                        <h3>Работа с sudo</h3>
+                        <p>Не работайте под root постоянно. Используйте <code>sudo</code> для административных задач. Настройте sudoers файл (<code>visudo</code>) для тонкого контроля.</p>
+                    </div>
+                    <div class="security-card">
+                        <div class="security-icon"><i class="fas fa-key"></i></div>
+                        <h3>Пароли и SSH</h3>
+                        <p>Используйте сложные пароли или SSH-ключи. Отключите вход по паролю в SSH (<code>/etc/ssh/sshd_config</code>). Регулярно обновляйте систему.</p>
+                    </div>
+                    <div class="security-card">
+                        <div class="security-icon"><i class="fas fa-cloud-download-alt"></i></div>
+                        <h3>Безопасные источники</h3>
+                        <p>Устанавливайте ПО только из доверенных репозиториев. Проверяйте PPA перед добавлением. Будьте осторожны с запуском скриптов из интернета.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources">
+            <div class="container">
+                <h2>Полезные ресурсы</h2>
+                <div class="resources-list">
+                    <div class="resource-card">
+                        <h3>Документация</h3>
+                        <ul>
+                            <li><a href="https://help.ubuntu.com" target="_blank">Ubuntu Documentation</a></li>
+                            <li><a href="https://wiki.archlinux.org" target="_blank">Arch Wiki</a> (полезно даже для не-Arch пользователей)</li>
+                            <li><a href="https://linuxjourney.com" target="_blank">Linux Journey</a> (интерактивное обучение)</li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h3>Форумы и Q&A</h3>
+                        <ul>
+                            <li><a href="https://askubuntu.com" target="_blank">Ask Ubuntu</a></li>
+                            <li><a href="https://unix.stackexchange.com" target="_blank">Unix & Linux Stack Exchange</a></li>
+                            <li><a href="https://www.reddit.com/r/linuxquestions/" target="_blank">r/linuxquestions</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-card">
+                        <h3>Книги</h3>
+                        <ul>
+                            <li>"Как стать профессионалом в Linux" - Джейсон Кэннон</li>
+                            <li>"Командная строка Linux" - Уильям Шоттс</li>
+                            <li>"Linux для начинающих" - Джейсон Кэннон</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cheatsheet">
+            <div class="container">
+                <h2>Шпаргалка по командам</h2>
+                <div class="cheatsheet-grid">
+                    <div class="cheatsheet-category">
+                        <h3>Файлы и каталоги</h3>
+                        <ul>
+                            <li><code>ls</code> - список файлов</li>
+                            <li><code>cp</code> - копирование</li>
+                            <li><code>mv</code> - перемещение/переименование</li>
+                            <li><code>rm</code> - удаление</li>
+                            <li><code>find</code> - поиск файлов</li>
+                        </ul>
+                    </div>
+                    <div class="cheatsheet-category">
+                        <h3>Система</h3>
+                        <ul>
+                            <li><code>top</code> - мониторинг процессов</li>
+                            <li><code>df</code> - свободное место на диске</li>
+                            <li><code>free</code> - использование памяти</li>
+                            <li><code>uname -a</code> - информация о системе</li>
+                            <li><code>reboot</code> - перезагрузка</li>
+                        </ul>
+                    </div>
+                    <div class="cheatsheet-category">
+                        <h3>Сеть</h3>
+                        <ul>
+                            <li><code>ping</code> - проверка соединения</li>
+                            <li><code>ifconfig</code> - сетевые интерфейсы</li>
+                            <li><code>ssh</code> - удаленное подключение</li>
+                            <li><code>wget</code> - скачивание файлов</li>
+                            <li><code>netstat</code> - сетевые соединения</li>
+                        </ul>
+                    </div>
+                    <div class="cheatsheet-category">
+                        <h3>Права доступа</h3>
+                        <ul>
+                            <li><code>chmod</code> - изменить права</li>
+                            <li><code>chown</code> - изменить владельца</li>
+                            <li><code>sudo</code> - выполнить от root</li>
+                            <li><code>passwd</code> - изменить пароль</li>
+                            <li><code>su</code> - сменить пользователя</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="download-cheatsheet">
+                    <a href="#" class="btn"><i class="fas fa-download"></i> Скачать полную шпаргалку (PDF)</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+    </footer>
+    
+    <script src="tips.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
